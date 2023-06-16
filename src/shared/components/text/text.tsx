@@ -10,7 +10,7 @@ interface TextProps extends TextPropsNative {
 }
 
 const Text = ({ type, color, ...props }: TextProps) => {
-  const handleSize = useMemo(() => {
+  const handleFontSize = useMemo(() => {
     switch (type) {
       case textTypes.TITLE:
         return '32px';
@@ -19,7 +19,7 @@ const Text = ({ type, color, ...props }: TextProps) => {
     }
   }, [type]);
 
-  return <ContainerText color={color} {...props} />;
+  return <ContainerText fontSize={handleFontSize} color={color} {...props} />;
 };
 
 export default Text;

@@ -1,3 +1,3 @@
 export enum textTypes {
-  TITLE = 'Title',
+  TITLE = 'TITLE',
 }

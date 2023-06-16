@@ -1,0 +1,44 @@
+
+
+import styled from 'styled-components/native';
+
+interface ContainerTextProps {
+  color: string;
+}
+
+export const ContainerText = styled.Text<ContainerTextProps>`
+  ${(props) => (props.color ? ` color: ${props.color}` : '')}
+`;
+
+
+
+
+
+import { TextProps as TextPropsNattive } from 'react-native';
+
+interface TextProps extends TextPropsNattive {
+  color?: 'string';
+}
+
+const Text = ({ ...props }: TextProps) => {
+  return <Text {...props} />;
+};
+
+export default Text;
+
+
+
+
+
+
+import { TextProps as TextPropsNattive } from 'react-native';
+
+interface TextProps extends TextPropsNattive {
+  color?: 'string';
+}
+
+const Text = ({ ...props }: TextProps) => {
+  return <Text {...props} />;
+};
+
+export default Text;

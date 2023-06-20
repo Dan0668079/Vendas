@@ -39,5 +39,7 @@ export const colors = {
     red600: '#D60303',
     viridian500: '#3398A2',
     yellow500: '#F9CA02',
+    primary: '#8C29B0',
+    gradient: '( #6E00FF, #8827FF, #A34EFF, #BD7BFF, #D6A9FF, #EFD6FF, #FF00E6)',
   },
 };

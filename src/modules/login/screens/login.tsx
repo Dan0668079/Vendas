@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import Button from '../../../shared/components/button/button';
 import Input from '../../../shared/components/input/input';
 import Text from '../../../shared/components/text/text';
+import { colors } from '../../../shared/themes/colors';
 import { theme } from '../../../shared/themes/theme';
 import { ContainerLogin } from '../styles/login.styles';
 
@@ -13,8 +14,8 @@ const Login = () => {
   return (
     <View>
       <ContainerLogin>
-        <Text>Login</Text>
-        <Input placeholder="E-mail" />
+        <Text color={colors.color.viridian500}>Login</Text>
+        <Input placeholder="Digite o seu e-mail" title="E-mail" />
         <Button
           type={theme.buttons.buttonsTheme.primary}
           margin={16}

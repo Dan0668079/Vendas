@@ -7,9 +7,10 @@ import { textTypes } from './text.types';
 interface TextProps extends TextPropsNative {
   color?: string;
   type?: string;
+  margin?: string;
 }
 
-const Text = ({ type, color, ...props }: TextProps) => {
+const Text = ({ margin, type, color, ...props }: TextProps) => {
   const fontSize = useMemo(() => {
     switch (type) {
       case textTypes.TITLE_BOLD:
@@ -65,7 +66,15 @@ const Text = ({ type, color, ...props }: TextProps) => {
     }
   }, [type]);
 
-  return <ContainerText fontFamily={fontFamily} fontSize={fontSize} color={color} {...props} />;
+  return (
+    <ContainerText
+      customMargin={margin}
+      fontFamily={fontFamily}
+      fontSize={fontSize}
+      color={color}
+      {...props}
+    />
+  );
 };
 
 export default Text;

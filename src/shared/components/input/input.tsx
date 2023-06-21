@@ -9,9 +9,10 @@ import { ContainerInput } from './input.style';
 
 interface InputProps extends TextInputProps {
   title?: string;
+  errorMessage?: string;
 } // ? para ter acesso a todas props do imput
 
-const Input = ({ title, ...props }: InputProps) => {
+const Input = ({ errorMessage, title, ...props }: InputProps) => {
   return (
     <DisplayFlexColumn>
       {title && (
@@ -23,7 +24,16 @@ const Input = ({ title, ...props }: InputProps) => {
           {title}
         </Text>
       )}
-      <ContainerInput {...props} />
+      <ContainerInput isError={!!errorMessage} {...props} />
+      {errorMessage && (
+        <Text
+          margin={'0px 0px 0px 10px'}
+          color={colors.color.red100}
+          type={textTypes.PARAGRAPH_SMALL_REGULAR}
+        >
+          {errorMessage}
+        </Text>
+      )}
     </DisplayFlexColumn>
   );
 };

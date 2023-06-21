@@ -19,8 +19,15 @@ const Login = () => {
         <Text color={colors.color.viridian500}>Login</Text>
         <Input
           // errorMessage="Usuário ou senha inválidos"
+          margin="0px 0px 15px 0px"
           placeholder="Digite o seu e-mail"
           title="E-mail"
+        />
+        <Input
+          // errorMessage="Usuário ou senha inválidos"
+          placeholder="Digite a sua senha"
+          secureTextEntry
+          title="senha"
         />
         <Button
           type={theme.buttons.buttonsTheme.primary}

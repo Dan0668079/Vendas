@@ -6,7 +6,7 @@ import Input from '../../../shared/components/input/input';
 import Text from '../../../shared/components/text/text';
 import { colors } from '../../../shared/themes/colors';
 import { theme } from '../../../shared/themes/theme';
-import { ContainerLogin } from '../styles/login.styles';
+import { ContainerLogin, Imagelogo } from '../styles/login.styles';
 
 const Login = () => {
   const handleOnPress = () => {
@@ -15,6 +15,7 @@ const Login = () => {
   return (
     <View>
       <ContainerLogin>
+        <Imagelogo resizeMode="cover" source={require('../../../assets/images/monitor_icon.png')} />
         <Icon name="home3" color="pink" size={32} />
         <Text color={colors.color.viridian500}>Login</Text>
         <Input

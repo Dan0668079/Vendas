@@ -1,14 +1,17 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import {
   Alert,
   Modal as ModalReact,
   ModalProps as ModalPropsReact,
-  Pressable,
-  Text,
-  View,
+  // Pressable,
+  // View,
 } from 'react-native';
 
-import { ContainerModal } from './modal.style';
+import { colors } from '../../themes/colors';
+import Button from '../button/button';
+import Text from '../text/text';
+import { textTypes } from '../text/text.types';
+import { ContainerModal, IconCloseModal } from './modal.style';
 
 interface ModalProps extends ModalPropsReact {
   title: string;
@@ -17,14 +20,14 @@ interface ModalProps extends ModalPropsReact {
 }
 
 const Modal = ({ title, text, onCloseModal, ...props }: ModalProps) => {
-  const [modalVisible, setModalVisible] = useState(false);
+  // const [modalVisible, setModalVisible] = useState(false);
 
   return (
     <>
       <ModalReact
         animationType="slide"
         transparent={true}
-        visible={modalVisible}
+        // visible={modalVisible}
         onRequestClose={() => {
           Alert.alert('Modal has been closed.');
           onCloseModal();
@@ -32,18 +35,14 @@ const Modal = ({ title, text, onCloseModal, ...props }: ModalProps) => {
         {...props}
       >
         <ContainerModal>
-          <View>
-            <Text>{title}</Text>
-            <Text>{text}</Text>
-            <Pressable onPress={onCloseModal}>
-              <Text>Hide Modal</Text>
-            </Pressable>
-          </View>
+          <Text type={textTypes.BUTTON_REGULAR} color={colors.color.primary}>
+            {title}
+          </Text>
+          <Text>{text}</Text>
+          <Button title="close" onPress={onCloseModal} />
+          <IconCloseModal name="cross" onPress={onCloseModal} />
         </ContainerModal>
       </ModalReact>
-      <Pressable onPress={() => setModalVisible(true)}>
-        <Text>Show Modal</Text>
-      </Pressable>
     </>
   );
 };
